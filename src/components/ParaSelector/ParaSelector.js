@@ -18,7 +18,7 @@ export class ParaSelector extends Component {
     return (
       <div className="ParaSelector">
         <label htmlFor="paragraphs">Paragraphs:</label>
-        <input onChange = {this.onChange.bind(this)}></input>
+        <input value={this.state.paras} onChange ={this.onChange.bind(this)}></input>
       </div>
     );
   }
