@@ -42,6 +42,7 @@ class App extends Component {
       })
       .then(data => {
         this.setState({ text: data.text })
+        return this.state.text
       })
   }
 
