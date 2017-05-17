@@ -35,10 +35,6 @@ class App extends Component {
     this.getText()
   }
 
-  getTest() {
-    return 'test'
-  }
-
   getText() {
     return fetch(`http://hipsterjesus.com/api?paras=${this.state.paras}&html=${this.state.html}`)
       .then(res => {
