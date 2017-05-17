@@ -5,14 +5,16 @@ export class EnableHTML extends Component {
   constructor(props){
     super(props)
     this.state={
-      html: props.html
+      html: props.html,
+      text: 'Disable HTML'
     }
-    this.text = 'Disable HTML'
   }
 
   toggle() {
-    this.setState({html: !this.props.html}, () => {
-      this.text = this.state.html ? 'Disable HTML' : 'Enable HTML'
+    this.setState({
+      html: !this.props.html,
+      text: this.state.text == 'Disable HTML' ? 'Enable HTML': 'Disable HTML'
+    }, () => {
       this.props.handler(this.state.html)
     })
   }
@@ -21,7 +23,7 @@ export class EnableHTML extends Component {
     return (
       <div className="EnableHTML">
         <label htmlFor="EnableHTML">EnableHTML:</label>
-        <button id="EnableHTML" onClick={this.toggle.bind(this)}>{this.text}</button>
+        <button id="EnableHTML" onClick={this.toggle.bind(this)}>{this.state.text}</button>
       </div>
     );
   }
